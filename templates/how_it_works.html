@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-3xl font-semibold mb-8 text-center">How LabourLink Works</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    {# Section for Workers #}
+    <div class="bg-white p-8 rounded-lg shadow-md">
+        <h3 class="text-2xl font-bold mb-6 text-center text-blue-600">For Workers</h3>
+        <div class="space-y-6">
+            <div class="flex items-start">
+                <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-blue-500 text-white rounded-full text-lg font-bold mr-4">1</div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-1">Register Once</h4>
+                    <p class="text-gray-700">Sign up with your name, location, skills, experience, and phone number. This is a one-time process.</p>
+                </div>
+            </div>
+            <div class="flex items-start">
+                <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-blue-500 text-white rounded-full text-lg font-bold mr-4">2</div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-1">Give a Missed Call Daily</h4>
+                    <p class="text-gray-700">When you are available for work, simply give a missed call to our dedicated number. This marks you as available for contractors to see.</p>
+                </div>
+            </div>
+            <div class="flex items-start">
+                <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-blue-500 text-white rounded-full text-lg font-bold mr-4">3</div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-1">Get Notified</h4>
+                    <p class="text-gray-700">If a contractor is interested in hiring you, you will receive an SMS notification with details on how to connect.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# Section for Contractors #}
+    <div class="bg-white p-8 rounded-lg shadow-md">
+        <h3 class="text-2xl font-bold mb-6 text-center text-green-600">For Contractors</h3>
+        <div class="space-y-6">
+            <div class="flex items-start">
+                <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-green-500 text-white rounded-full text-lg font-bold mr-4">1</div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-1">Login to Dashboard</h4>
+                    <p class="text-gray-700">Log in to your secure contractor dashboard.</p>
+                </div>
+            </div>
+            <div class="flex items-start">
+                <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-green-500 text-white rounded-full text-lg font-bold mr-4">2</div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-1">View Available Workers</h4>
+                    <p class="text-gray-700">See a list of daily wage laborers who are currently available for work. Filter by skills, location, and experience.</p>
+                </div>
+            </div>
+            <div class="flex items-start">
+                <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-green-500 text-white rounded-full text-lg font-bold mr-4">3</div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-1">Hire with a Click</h4>
+                    <p class="text-gray-700">Click the "Hire" button next to a worker's profile to send them an instant SMS notification about the potential job.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
