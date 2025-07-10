@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+
+{% block content %}
+{# Hero Section #}
+<section class="hero bg-secondary-purple text-white py-20 rounded-lg shadow-xl">
+    <div class="container mx-auto text-center px-4">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Dial. Hang up. Get Hired.</h1>
+        <p class="text-xl mb-8 max-w-2xl mx-auto text-gray-200">LabourLink connects daily wage laborers with local contractors quickly and efficiently.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="{{ url_for('register') }}" class="bg-primary-dark-blue text-white font-bold py-3 px-8 rounded-full shadow-lg hover:opacity-65 transition duration-300">
+                Register as a Worker
+            </a>
+            <a href="{{ url_for('login') }}" class="bg-primary-dark-blue text-white font-bold py-3 px-8 rounded-full shadow-lg hover:opacity-65 transition duration-300">
+                Contractor Login
+            </a>
+        </div>
+    </div>
+</section>
+
+{# How It Works Summary Section #}
+<section class="how-it-works-summary py-16 px-4">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-8 text-gray-800">How LabourLink Works</h2>
+        <p class="text-lg mb-8 max-w-3xl mx-auto text-gray-700">LabourLink simplifies the process of finding and hiring daily wage labor. Workers register once, and contractors can quickly find available workers based on their needs.</p>
+        <a href="{{ url_for('how_it_works') }}" class="text-accent-teal hover:underline font-semibold text-lg transition duration-300 ease-in-out">Learn More &rarr;</a>
+    </div>
+</section>
+
+{# Why Choose LabourLink Section (Moved from base.html) #}
+<div class="otherdetails bg-secondary-purple py-16 mt-12 rounded-lg shadow-xl">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-white mb-10">Why Choose LabourLink?</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            {# Platform Benefits Section #}
+            <div class="flex flex-col items-center text-center">
+                <img src="https://placehold.co/180x180/A7C5EB/2A2D43?text=Benefits" alt="Platform Benefits" class="rounded-full mb-6 shadow-lg border-4 border-white">
+                <h3 class="text-2xl font-semibold text-white mb-4">Platform Benefits</h3>
+                <p class="text-gray-200 leading-relaxed text-lg">
+                    LabourLink simplifies the process of finding and hiring daily wage laborers.
+                    Workers can easily signal their availability with a simple missed call,
+                    connecting them directly with contractors who need their skills.
+                    Our platform ensures quick and efficient matching, reducing downtime
+                    and increasing opportunities for both parties.
+                </p>
+            </div>
+
+            {# Government Incorporation Section #}
+            <div class="flex flex-col items-center text-center">
+                <img src="https://placehold.co/180x180/6EC5B8/2A2D43?text=Govt+Partnership" alt="Government Incorporation" class="rounded-full mb-6 shadow-lg border-4 border-white">
+                <h3 class="text-2xl font-semibold text-white mb-4">Incorporation with Government Initiatives</h3>
+                <p class="text-gray-200 leading-relaxed text-lg">
+                    We are actively working towards incorporating LabourLink with relevant
+                    government schemes and initiatives aimed at supporting daily wage laborers.
+                    Our goal is to provide a recognized and reliable platform that aligns with
+                    government efforts to empower the workforce and streamline labor allocation
+                    in various sectors.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="government-schemes py-16 px-4 bg-light-grayish-purple" id="gov-schemes">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-10 text-gray-800">Aligned with Government Schemes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+                <img src="{{ url_for('static', filename='MNREGA.jpg') }}" alt="Scheme 1" class="w-20 h-20 mb-4">
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA)</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    LabourLink is a platform for connecting labor to various jobs, it could potentially complement MGNREGA by providing additional avenues for employment beyond the guaranteed days or for different types of work.
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+                <img src="{{ url_for('static', filename='Skill_India.png') }}" alt="Scheme 2" class="w-20 h-20 mb-4">
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">Skill India Mission</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Schemes under this mission, like the Pradhan Mantri Kaushal Vikas Yojana (PMKVY), focus on skill development and certification. LabourLink can be a platform where skilled laborers (certified under such schemes) can find work matching their skills.
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+                <img src="{{ url_for('static', filename='nulm.png') }}" alt="Scheme 3" class="w-20 h-20 mb-4">
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">National Urban Livelihoods Mission (NULM)</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    While MGNREGA focuses on rural areas, NULM aims to reduce poverty and vulnerability of the urban poor households by enabling them to access gainful self-employment and skilled wage employment opportunities. Depending on whether your platform caters to urban laborers, NULM could be relevant.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sdg-goals py-16 px-4 bg-white" id="sdg-goals">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-10 text-gray-800">Contributing to UN SDG Goals</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center">
+                <img src="{{ url_for('static', filename='sdg1.png') }}" alt="SDG 1" class="w-20 h-20 mb-4">
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">SDG 1: No Poverty</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    By connecting laborers to consistent work opportunities, LabourLink helps reduce poverty.
+                </p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center">
+                <img src="{{ url_for('static', filename='sdg8.png') }}" alt="SDG 8" class="w-20 h-20 mb-4">
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">SDG 8: Decent Work and Economic Growth</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    We promote inclusive and sustainable economic growth by facilitating decent work opportunities.
+                </p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center">
+                <img src="{{ url_for('static', filename='sdg10.png') }}" alt="SDG 10" class="w-20 h-20 mb-4">
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">SDG 10: Reduced Inequalities</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    LabourLink helps reduce inequality by providing equal access to job opportunities for laborers.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# Success Stories Section #}
+<section class="success-stories py-16 px-4 bg-light-grayish-purple">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-10 text-gray-800">Real Success Stories</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="flex flex-col items-center text-center">
+                <img src="{{ url_for('static', filename='ravi.png') }}" alt="Worker 1" class="rounded-full w-32 h-32 object-cover shadow-lg mb-4">
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">Ravi from Kanpur</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">"I used to wait for work daily. Now, I get consistent job calls thanks to LabourLink."</p>
+            </div>
+            <div class="flex flex-col items-center text-center">
+                <img src="{{ url_for('static', filename='mira.png') }}" alt="Worker 2" class="rounded-full w-32 h-32 object-cover shadow-lg mb-4">
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">Sita from Nagpur</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">"LabourLink helped me get jobs regularly and support my family without stress."</p>
+            </div>
+            <div class="flex flex-col items-center text-center">
+                <img src="{{ url_for('static', filename='aman.png') }}" alt="Worker 3" class="rounded-full w-32 h-32 object-cover shadow-lg mb-4">
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">Aman from Bhopal</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">"Earlier, I had no way to reach contractors. Now they reach me!"</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# Meet Our Workers Section #}
+<!-- <section class="our-workers bg-white py-16">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-10 text-gray-800">Meet Our Workforce</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <img src="{{ url_for('static', filename='images/labor1.jpg') }}" alt="Worker" class="rounded-lg shadow-md">
+            <img src="{{ url_for('static', filename='images/labor2.jpg') }}" alt="Worker" class="rounded-lg shadow-md">
+            <img src="{{ url_for('static', filename='images/labor3.jpg') }}" alt="Worker" class="rounded-lg shadow-md">
+            <img src="{{ url_for('static', filename='images/labor4.jpg') }}" alt="Worker" class="rounded-lg shadow-md">
+        </div>
+    </div>
+</section> -->
+
+{# Contractor Testimonials Section #}
+<section class="contractor-testimonials bg-secondary-purple py-16 text-white">
+    <div class="container mx-auto text-center px-4">
+        <h2 class="text-3xl font-semibold mb-10">What Contractors Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="bg-white bg-opacity-10 p-6 rounded-lg shadow-md">
+                <p class="text-lg italic">"I found 10 skilled laborers in under 15 minutes. This platform is revolutionary."</p>
+                <p class="mt-4 font-semibold text-accent-teal">- Mr. Verma, Site Manager, Lucknow</p>
+            </div>
+            <div class="bg-white bg-opacity-10 p-6 rounded-lg shadow-md">
+                <p class="text-lg italic">"No more waiting or middlemen. Transparent, quick, and reliable."</p>
+                <p class="mt-4 font-semibold text-accent-teal">- Mrs. Sharma, Civil Contractor, Jaipur</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
+
+>>>>>>> f21061a (Add Final code)
+

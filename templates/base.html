@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - LabourLink</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Refined blueish-purple palette */
+        .bg-primary-dark-blue {
+            background-color: #2A2D43; /* Deep Indigo */
+        }
+        .bg-secondary-purple {
+            background-color: #5A5E7C; /* Medium Purple */
+        }
+        .bg-light-grayish-purple {
+            background-color: #D3D5E0; /* Light Steel Blue */
+        }
+        .text-accent-teal {
+            color: #6EC5B8; /* Cadet Blue / Teal */
+        }
+        .hover\:text-accent-hover:hover {
+             color: #A7C5EB; /* Light Blue */
+        }
+
+         /* Adjusted flash message colors for better contrast */
+        .alert-success {
+            background-color: #D4EDDA; /* Light Green */
+            color: #155724; /* Dark Green */
+        }
+        .alert-danger {
+            background-color: #F8D7DA; /* Light Red */
+            color: #721C24; /* Dark Red */
+        }
+         .alert-info {
+            background-color: #CCE5FF; /* Light Blue */
+            color: #004085; /* Dark Blue */
+         }
+         .alert-warning {
+             background-color: #FFF3CD; /* Light Yellow */
+             color: #856404; /* Dark Yellow */
+         }
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const year = moment().format('YYYY');
+            document.getElementById('copyright').innerText = `© ${year} LabourLink. All rights reserved.`;
+        });
+    </script>
+</head>
+
+<body class="flex flex-col min-h-screen bg-light-grayish-purple">
+    <header class="bg-primary-dark-blue text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="{{ url_for('index') }}" class="text-2xl font-bold tracking-wide">LabourLink</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="{{ url_for('index') }}" class="hover:underline hover:text-accent-hover transition duration-300 ease-in-out">Home</a></li>
+                    <li><a href="{{ url_for('how_it_works') }}" class="hover:underline hover:text-accent-hover transition duration-300 ease-in-out">How It Works</a></li>
+                    <li><a href="{{ url_for('register') }}" class="hover:underline hover:text-accent-hover transition duration-300 ease-in-out">Worker Register</a></li>
+                    <li><a href="{{ url_for('login') }}" class="hover:underline hover:text-accent-hover transition duration-300 ease-in-out">Contractor Login</a></li>
+                    {# Add Logout link if contractor is logged in (requires session check in Flask) #}
+                    {% if session.get('contractor_username') %}
+                        <li><a href="{{ url_for('logout') }}" class="hover:underline hover:text-accent-hover transition duration-300 ease-in-out">Logout</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-10 p-6 flex-grow bg-white rounded-lg shadow-xl">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="mb-6">
+                    {% for category, message in messages %}
+                        <div class="p-4 rounded-md alert-{{ category }}" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    {# Removed the otherdetails div from here #}
+
+    <footer class="bg-primary-dark-blue text-white p-8 mt-12">
+        <div class="container mx-auto text-center">
+            <p id="copyright" class="text-gray-400 text-sm"></p>
+            <div class="flex justify-center space-x-6 mt-4 text-gray-400">
+                <a href="#" class="hover:text-accent-hover transition duration-300 ease-in-out">Facebook</a>
+                <a href="#" class="hover:text-accent-hover transition duration-300 ease-in-out">Twitter</a>
+                <a href="#" class="hover:text-accent-hover transition duration-300 ease-in-out">LinkedIn</a>
+            </div>
+            <div class="mt-4 text-sm text-gray-500">
+                <a href="#" class="hover:underline hover:text-accent-hover transition duration-300 ease-in-out mx-3">Privacy Policy</a>
+                <a href="#" class="hover:underline hover:text-accent-hover transition duration-300 ease-in-out mx-3">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
